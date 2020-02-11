@@ -26,6 +26,14 @@ let navLinks = document.querySelectorAll("nav > a");
 //nav code
 navLinks.forEach(link => hoverColor(link, "orange"));
 
+//stop navlinks from refreshing page
+
+navLinks.forEach( link => {
+    addEventListener("click", function(){
+        event.preventDefault();
+    });
+})
+
 // MIDDLE SECTION //
 
 
@@ -104,14 +112,23 @@ let rotate180 = (element) => {
     element.addEventListener('dblclick', function(){
         if (element.style.transform !== "rotate(180deg)") {
             element.style.transform = "rotate(180deg)";
+            event.stopPropagation();
         } else {
             element.style.transform = "rotate(0deg)";
+            event.stopPropagation();
         }
         
     })
 }
 let rotate180img = document.querySelector(".inverse-content img");
 rotate180(rotate180img);
+
+// ADD SOMETHING TO MAKE THE EVENT FIRE IN TWO PLACES????
+let inverseContent = document.querySelector(".inverse-content");
+
+inverseContent.addEventListener("dblclick", function(){
+    inverseContent.style.color = "lightgray";
+})
 
 //change heading color to pink when non right click
 
@@ -145,4 +162,5 @@ copyright.addEventListener("mouseenter", function(){
 copyright.addEventListener("mouseleave", function(){
     copyright.style.backgroundColor = "orange";
 })
+
 

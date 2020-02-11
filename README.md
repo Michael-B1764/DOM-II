@@ -7,7 +7,7 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 **Follow these steps to set up and work on your project:**
 
 * [x] Create a forked copy of this project.
-* [ ] Add your project manager as collaborator on Github.
+* [x] Add your project manager as collaborator on Github.
 * [x] Clone your OWN version of the repository (Not Lambda's by mistake!).
 * [x] Create a new branch: git checkout -b `<firstName-lastName>`.
 * [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
@@ -47,8 +47,8 @@ Fun Bus wants you to make their site more interactive. They are relying on you t
 
 Using the 10 unique events, find ways to update the DOM in creative ways. For example you could change colors, animate objects, remove objects, etc.
 
-* [ ] Nest two similar events somewhere in the site and prevent the event propagation properly
-* [ ] Stop the navigation items from refreshing the page by using `preventDefault()`
+* [x] Nest two similar events somewhere in the site and prevent the event propagation properly
+* [x] Stop the navigation items from refreshing the page by using `preventDefault()`
 
 ## Stretch Task:
 
