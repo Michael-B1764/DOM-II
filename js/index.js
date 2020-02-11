@@ -61,9 +61,6 @@ contentSectionImage.appendChild(letsGoPopupDiv);
 
 
 
-console.log(contentSectionImage);
-
-
 let clickAddWords = (element, textElement) => {
     element.addEventListener("click", function(){
         if (textElement.style.display === "none"){
@@ -81,11 +78,19 @@ let keyPressFunction = () => {
 document.addEventListener("keypress", keyPressFunction);
 
 
-//when screen is resized, change funbus text to bold
+//rotate bottom image 25 degrees when click, then rotate back when click ends
 
 
-let logoHeading = window.querySelector(".logo-heading");
-let resizeFunction = () => {
-    logoHeading.style.color = "pink";
+let rotate25 = (element) => {
+    element.addEventListener('mousedown', function(){
+        element.style.transform = "rotate(25deg)";
+    });
 }
-document.addEventListener("resize", resizeFunction);
+let rotate25Back = (element) => {
+    element.addEventListener('mouseup', function() {
+        element.style.transform = "rotate(0deg)";
+    });
+}
+let rotate25img = document.querySelector(".content-destination > img");
+rotate25(rotate25img);
+rotate25Back(rotate25img);
