@@ -94,3 +94,55 @@ let rotate25Back = (element) => {
 let rotate25img = document.querySelector(".content-destination > img");
 rotate25(rotate25img);
 rotate25Back(rotate25img);
+
+
+
+
+//flip adventure awaits upsidedown on doubleclick
+
+let rotate180 = (element) => {
+    element.addEventListener('dblclick', function(){
+        if (element.style.transform !== "rotate(180deg)") {
+            element.style.transform = "rotate(180deg)";
+        } else {
+            element.style.transform = "rotate(0deg)";
+        }
+        
+    })
+}
+let rotate180img = document.querySelector(".inverse-content img");
+rotate180(rotate180img);
+
+//change heading color to pink when non right click
+
+let changeHeaderPink = (element) => {
+   
+     element.addEventListener('auxclick', function() {
+         element.style.color = "pink";
+    });
+
+}
+
+let headerText = document.querySelector(".intro p");
+let headerTextColor = headerText.style.color;
+changeHeaderPink(headerText);
+
+
+//if text is copied, prompt for new text then place new text
+let welcomeText = document.querySelector(".intro h2");
+welcomeText.addEventListener("copy", function(){
+    let newWelcomeText = prompt("What should I change the text to?");
+    welcomeText.innerHTML = newWelcomeText
+})
+
+
+//if I move my mouse over the copyright section it's background changes
+let copyright = document.querySelector(".footer p");
+copyright.addEventListener("mouseenter", function(){
+    copyright.style.backgroundColor = "gray";
+})
+
+copyright.addEventListener("mouseleave", function(){
+    copyright.style.backgroundColor = "orange";
+})
+
